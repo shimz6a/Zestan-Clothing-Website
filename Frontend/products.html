@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop ZESTAAN premium fashion collection. Filter by category, size, color, and price.">
+    <title>Shop All Products - ZESTAAN</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/products.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">ZESTAAN</a>
+            
+            <nav class="nav-main">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown">
+                        <a href="products.html?category=men" class="nav-link">Men</a>
+                        <div class="dropdown-menu">
+                            <a href="products.html?category=men&sub=shirts">Shirts</a>
+                            <a href="products.html?category=men&sub=pants">Pants</a>
+                            <a href="products.html?category=men&sub=jackets">Jackets</a>
+                            <a href="products.html?category=men&sub=footwear">Footwear</a>
+                            <a href="products.html?category=men&sub=activewear">Activewear</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="products.html?category=women" class="nav-link">Women</a>
+                        <div class="dropdown-menu">
+                            <a href="products.html?category=women&sub=shirts">Shirts</a>
+                            <a href="products.html?category=women&sub=dresses">Dresses</a>
+                            <a href="products.html?category=women&sub=pants">Pants</a>
+                            <a href="products.html?category=women&sub=jackets">Jackets</a>
+                            <a href="products.html?category=women&sub=footwear">Footwear</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="products.html?category=kids" class="nav-link">Kids</a>
+                        <div class="dropdown-menu">
+                            <a href="products.html?category=kids&sub=shirts">Shirts</a>
+                            <a href="products.html?category=kids&sub=pants">Pants</a>
+                            <a href="products.html?category=kids&sub=jackets">Jackets</a>
+                            <a href="products.html?category=kids&sub=footwear">Footwear</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html?category=accessories" class="nav-link">Accessories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html?tag=new" class="nav-link">New Arrivals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html?tag=sale" class="nav-link">Sale</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="header-search">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                    <button type="button" id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <a href="wishlist.html" class="header-icon" id="wishlistIcon">
+                    <i class="far fa-heart"></i>
+                    <span class="badge" id="wishlistCount">0</span>
+                </a>
+                
+                <a href="cart.html" class="header-icon" id="cartIcon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="badge" id="cartCount">0</span>
+                </a>
+                
+                <a href="account.html" class="header-icon">
+                    <i class="far fa-user"></i>
+                </a>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <span class="logo">ZESTAAN</span>
+            <button class="mobile-nav-close" id="mobileNavClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item"><a href="products.html?category=men">Men</a></li>
+            <li class="mobile-nav-item"><a href="products.html?category=women">Women</a></li>
+            <li class="mobile-nav-item"><a href="products.html?category=kids">Kids</a></li>
+            <li class="mobile-nav-item"><a href="products.html?category=accessories">Accessories</a></li>
+            <li class="mobile-nav-item"><a href="products.html?tag=new">New Arrivals</a></li>
+            <li class="mobile-nav-item"><a href="products.html?tag=sale">Sale</a></li>
+        </ul>
+    </nav>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 id="pageTitle">All Products</h1>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span id="breadcrumbCurrent">Products</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="products-section section">
+            <div class="container-fluid">
+                <div class="products-layout">
+                    <!-- Sidebar Filters -->
+                    <aside class="filters-sidebar" id="filtersSidebar">
+                        <div class="filters-header">
+                            <h3>Filters</h3>
+                            <button class="filters-clear" id="clearFilters">Clear All</button>
+                        </div>
+                        
+                        <!-- Category Filter -->
+                        <div class="filter-group">
+                            <h4>Category</h4>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" name="category" value="Men">
+                                    <span>Men</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="category" value="Women">
+                                    <span>Women</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="category" value="Kids">
+                                    <span>Kids</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="category" value="Accessories">
+                                    <span>Accessories</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Price Range Filter -->
+                        <div class="filter-group">
+                            <h4>Price Range</h4>
+                            <div class="price-range">
+                                <input type="number" id="priceMin" placeholder="Min" min="0">
+                                <span>to</span>
+                                <input type="number" id="priceMax" placeholder="Max" min="0">
+                            </div>
+                            <button class="btn btn-outline btn-sm btn-full mt-2" id="applyPriceFilter">Apply</button>
+                        </div>
+                        
+                        <!-- Size Filter -->
+                        <div class="filter-group">
+                            <h4>Size</h4>
+                            <div class="filter-options size-options">
+                                <label class="filter-option size-option">
+                                    <input type="checkbox" name="size" value="XS">
+                                    <span>XS</span>
+                                </label>
+                                <label class="filter-option size-option">
+                                    <input type="checkbox" name="size" value="S">
+                                    <span>S</span>
+                                </label>
+                                <label class="filter-option size-option">
+                                    <input type="checkbox" name="size" value="M">
+                                    <span>M</span>
+                                </label>
+                                <label class="filter-option size-option">
+                                    <input type="checkbox" name="size" value="L">
+                                    <span>L</span>
+                                </label>
+                                <label class="filter-option size-option">
+                                    <input type="checkbox" name="size" value="XL">
+                                    <span>XL</span>
+                                </label>
+                                <label class="filter-option size-option">
+                                    <input type="checkbox" name="size" value="XXL">
+                                    <span>XXL</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Color Filter -->
+                        <div class="filter-group">
+                            <h4>Color</h4>
+                            <div class="color-filter-options">
+                                <label class="color-filter-option" title="Black">
+                                    <input type="checkbox" name="color" value="#000000">
+                                    <span class="color-swatch" style="background-color: #000000;"></span>
+                                </label>
+                                <label class="color-filter-option" title="White">
+                                    <input type="checkbox" name="color" value="#FFFFFF">
+                                    <span class="color-swatch" style="background-color: #FFFFFF; border: 1px solid #ddd;"></span>
+                                </label>
+                                <label class="color-filter-option" title="Gray">
+                                    <input type="checkbox" name="color" value="#808080">
+                                    <span class="color-swatch" style="background-color: #808080;"></span>
+                                </label>
+                                <label class="color-filter-option" title="Blue">
+                                    <input type="checkbox" name="color" value="#4169E1">
+                                    <span class="color-swatch" style="background-color: #4169E1;"></span>
+                                </label>
+                                <label class="color-filter-option" title="Red">
+                                    <input type="checkbox" name="color" value="#DC143C">
+                                    <span class="color-swatch" style="background-color: #DC143C;"></span>
+                                </label>
+                                <label class="color-filter-option" title="Brown">
+                                    <input type="checkbox" name="color" value="#8B4513">
+                                    <span class="color-swatch" style="background-color: #8B4513;"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Tags Filter -->
+                        <div class="filter-group">
+                            <h4>Collections</h4>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" name="tag" value="new">
+                                    <span>New Arrivals</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="tag" value="bestseller">
+                                    <span>Best Sellers</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="tag" value="exclusive">
+                                    <span>Exclusive</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="tag" value="limited">
+                                    <span>Limited Edition</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="tag" value="seasonal">
+                                    <span>Seasonal</span>
+                                </label>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Products Main Content -->
+                    <div class="products-main">
+                        <!-- Filters Bar -->
+                        <div class="filters-bar">
+                            <div class="filters-left">
+                                <button class="mobile-filters-toggle" id="mobileFiltersToggle">
+                                    <i class="fas fa-filter"></i> Filters
+                                </button>
+                                <span class="results-count" id="resultsCount">Loading...</span>
+                            </div>
+                            <div class="filters-right">
+                                <select id="sortSelect" class="sort-select">
+                                    <option value="">Sort By: Featured</option>
+                                    <option value="price-asc">Price: Low to High</option>
+                                    <option value="price-desc">Price: High to Low</option>
+                                    <option value="name-asc">Name: A to Z</option>
+                                    <option value="name-desc">Name: Z to A</option>
+                                    <option value="rating">Highest Rated</option>
+                                    <option value="newest">Newest First</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Active Filters -->
+                        <div class="active-filters" id="activeFilters"></div>
+
+                        <!-- Products Grid -->
+                        <div class="product-grid" id="productsGrid">
+                            <!-- Products will be loaded here -->
+                            <div class="skeleton-card"></div>
+                            <div class="skeleton-card"></div>
+                            <div class="skeleton-card"></div>
+                            <div class="skeleton-card"></div>
+                            <div class="skeleton-card"></div>
+                            <div class="skeleton-card"></div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination" id="pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-section">
+                    <h4>About ZESTAAN</h4>
+                    <p>Premium clothing brand dedicated to delivering luxury fashion with uncompromising quality and style.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="products.html?category=men">Men</a></li>
+                        <li><a href="products.html?category=women">Women</a></li>
+                        <li><a href="products.html?category=kids">Kids</a></li>
+                        <li><a href="products.html?category=accessories">Accessories</a></li>
+                        <li><a href="products.html?tag=new">New Arrivals</a></li>
+                        <li><a href="products.html?tag=sale">Sale</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="orders.html">Order Tracking</a></li>
+                        <li><a href="shipping.html">Shipping Info</a></li>
+                        <li><a href="returns.html">Returns & Refunds</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog & Lookbook</a></li>
+                        <li><a href="membership.html">Membership Program</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 ZESTAAN. All rights reserved. Premium Fashion for the Modern World.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/cart.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

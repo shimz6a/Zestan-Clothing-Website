@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ZESTAAN - Premium Clothing Brand. Discover the latest collections in men's, women's, and kids' fashion with exclusive designs and luxury quality.">
+    <title>ZESTAAN - Premium Fashion | Luxury Clothing Brand</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">ZESTAAN</a>
+            
+            <!-- Main Navigation (Desktop) -->
+            <nav class="nav-main">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown">
+                        <a href="products.html?category=men" class="nav-link">Men</a>
+                        <div class="dropdown-menu">
+                            <a href="products.html?category=men&sub=shirts">Shirts</a>
+                            <a href="products.html?category=men&sub=pants">Pants</a>
+                            <a href="products.html?category=men&sub=jackets">Jackets</a>
+                            <a href="products.html?category=men&sub=footwear">Footwear</a>
+                            <a href="products.html?category=men&sub=activewear">Activewear</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="products.html?category=women" class="nav-link">Women</a>
+                        <div class="dropdown-menu">
+                            <a href="products.html?category=women&sub=shirts">Shirts</a>
+                            <a href="products.html?category=women&sub=dresses">Dresses</a>
+                            <a href="products.html?category=women&sub=pants">Pants</a>
+                            <a href="products.html?category=women&sub=jackets">Jackets</a>
+                            <a href="products.html?category=women&sub=footwear">Footwear</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="products.html?category=kids" class="nav-link">Kids</a>
+                        <div class="dropdown-menu">
+                            <a href="products.html?category=kids&sub=shirts">Shirts</a>
+                            <a href="products.html?category=kids&sub=pants">Pants</a>
+                            <a href="products.html?category=kids&sub=jackets">Jackets</a>
+                            <a href="products.html?category=kids&sub=footwear">Footwear</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html?category=accessories" class="nav-link">Accessories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html?tag=new" class="nav-link">New Arrivals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html?tag=sale" class="nav-link">Sale</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Search -->
+                <div class="header-search">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                    <button type="button" id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <!-- Wishlist -->
+                <a href="wishlist.html" class="header-icon" id="wishlistIcon">
+                    <i class="far fa-heart"></i>
+                    <span class="badge" id="wishlistCount">0</span>
+                </a>
+                
+                <!-- Cart -->
+                <a href="cart.html" class="header-icon" id="cartIcon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="badge" id="cartCount">0</span>
+                </a>
+                
+                <!-- User Account -->
+                <a href="account.html" class="header-icon">
+                    <i class="far fa-user"></i>
+                </a>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <span class="logo">ZESTAAN</span>
+            <button class="mobile-nav-close" id="mobileNavClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item"><a href="products.html?category=men">Men</a></li>
+            <li class="mobile-nav-item"><a href="products.html?category=women">Women</a></li>
+            <li class="mobile-nav-item"><a href="products.html?category=kids">Kids</a></li>
+            <li class="mobile-nav-item"><a href="products.html?category=accessories">Accessories</a></li>
+            <li class="mobile-nav-item"><a href="products.html?tag=new">New Arrivals</a></li>
+            <li class="mobile-nav-item"><a href="products.html?tag=sale">Sale</a></li>
+            <li class="mobile-nav-item"><a href="account.html">My Account</a></li>
+            <li class="mobile-nav-item"><a href="orders.html">Order Tracking</a></li>
+        </ul>
+    </nav>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Carousel -->
+        <section class="hero" id="heroCarousel">
+            <div class="hero-slide active" style="display: block;">
+                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1920&h=1080&fit=crop" alt="New Arrivals" class="hero-image" loading="eager">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">New Arrivals</h1>
+                    <p class="hero-subtitle">Discover the latest trends in premium fashion</p>
+                    <div class="hero-cta">
+                        <a href="products.html?tag=new" class="btn btn-primary btn-lg">Shop Now</a>
+                        <a href="products.html" class="btn btn-secondary btn-lg">Explore All</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-slide" style="display: none;">
+                <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=1920&h=1080&fit=crop" alt="Best Sellers" class="hero-image" loading="lazy">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Best Sellers</h1>
+                    <p class="hero-subtitle">Customer favorites that define style</p>
+                    <div class="hero-cta">
+                        <a href="products.html?tag=bestseller" class="btn btn-primary btn-lg">Shop Best Sellers</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-slide" style="display: none;">
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1920&h=1080&fit=crop" alt="Limited Edition" class="hero-image" loading="lazy">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Limited Drops</h1>
+                    <p class="hero-subtitle">Exclusive pieces, available for a limited time</p>
+                    <div class="hero-cta">
+                        <a href="products.html?tag=limited" class="btn btn-primary btn-lg">Shop Limited Edition</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-slide" style="display: none;">
+                <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1920&h=1080&fit=crop" alt="Seasonal Collection" class="hero-image" loading="lazy">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Seasonal Collection</h1>
+                    <p class="hero-subtitle">Elevate your wardrobe this season</p>
+                    <div class="hero-cta">
+                        <a href="products.html?tag=seasonal" class="btn btn-primary btn-lg">Explore Collection</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-slide" style="display: none;">
+                <img src="https://images.unsplash.com/photo-1558769132-cb1aea3c3874?w=1920&h=1080&fit=crop" alt="ZESTAAN Exclusive" class="hero-image" loading="lazy">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">ZESTAAN Exclusive</h1>
+                    <p class="hero-subtitle">Premium designs crafted for perfection</p>
+                    <div class="hero-cta">
+                        <a href="products.html?tag=exclusive" class="btn btn-primary btn-lg">Shop Exclusive</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hero Controls -->
+            <div class="hero-controls">
+                <button class="hero-prev" id="heroPrev"><i class="fas fa-chevron-left"></i></button>
+                <button class="hero-next" id="heroNext"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="hero-indicators" id="heroIndicators"></div>
+        </section>
+
+        <!-- Category Showcase -->
+        <section class="category-showcase section">
+            <div class="container">
+                <div class="category-grid">
+                    <a href="products.html?category=men" class="category-card">
+                        <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=600&h=800&fit=crop" alt="Men's Collection" loading="lazy">
+                        <div class="category-overlay">
+                            <h3>Men</h3>
+                            <p>Shop Collection</p>
+                        </div>
+                    </a>
+                    <a href="products.html?category=women" class="category-card">
+                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&h=800&fit=crop" alt="Women's Collection" loading="lazy">
+                        <div class="category-overlay">
+                            <h3>Women</h3>
+                            <p>Shop Collection</p>
+                        </div>
+                    </a>
+                    <a href="products.html?category=kids" class="category-card">
+                        <img src="https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=600&h=800&fit=crop" alt="Kids Collection" loading="lazy">
+                        <div class="category-overlay">
+                            <h3>Kids</h3>
+                            <p>Shop Collection</p>
+                        </div>
+                    </a>
+                    <a href="products.html?category=accessories" class="category-card">
+                        <img src="https://images.unsplash.com/photo-1609081219090-a6d81d3085bf?w=600&h=800&fit=crop" alt="Accessories" loading="lazy">
+                        <div class="category-overlay">
+                            <h3>Accessories</h3>
+                            <p>Shop Collection</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Arrivals -->
+        <section class="collection-section">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-tag">Just In</p>
+                    <h2>New Arrivals</h2>
+                    <p>Discover the latest additions to our collection</p>
+                </div>
+                <div class="product-grid" id="newArrivalsGrid">
+                    <!-- Products will be loaded dynamically -->
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="products.html?tag=new" class="btn btn-outline btn-lg">View All New Arrivals</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Sellers -->
+        <section class="collection-section" style="background-color: var(--light-gray);">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-tag">Customer Favorites</p>
+                    <h2>Best Sellers</h2>
+                    <p>The most loved pieces from our collection</p>
+                </div>
+                <div class="product-grid" id="bestSellersGrid">
+                    <!-- Products will be loaded dynamically -->
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="products.html?tag=bestseller" class="btn btn-outline btn-lg">View All Best Sellers</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Banner -->
+        <section class="featured-banner">
+            <div class="featured-content">
+                <img src="https://images.unsplash.com/photo-1558769132-cb1aea3c3874?w=1920&h=600&fit=crop" alt="ZESTAAN Exclusive Collection" loading="lazy">
+                <div class="featured-overlay">
+                    <div class="featured-text">
+                        <h2>ZESTAAN Exclusive Collection</h2>
+                        <p>Premium designs crafted to perfection. Discover our signature pieces.</p>
+                        <a href="products.html?tag=exclusive" class="btn btn-primary btn-lg">Explore Exclusive</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seasonal Collection -->
+        <section class="collection-section">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-tag">Limited Time</p>
+                    <h2>Seasonal Collection</h2>
+                    <p>Elevate your style with our curated seasonal picks</p>
+                </div>
+                <div class="product-grid" id="seasonalGrid">
+                    <!-- Products will be loaded dynamically -->
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="products.html?tag=seasonal" class="btn btn-outline btn-lg">View Seasonal Collection</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section section">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-shipping-fast"></i>
+                        <h4>Free Shipping</h4>
+                        <p>On orders over $100</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-undo"></i>
+                        <h4>Easy Returns</h4>
+                        <p>30-day return policy</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-lock"></i>
+                        <h4>Secure Payment</h4>
+                        <p>100% secure transactions</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-headset"></i>
+                        <h4>24/7 Support</h4>
+                        <p>Dedicated customer service</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Join the ZESTAAN Community</h2>
+                    <p>Subscribe to get exclusive offers, style tips, and early access to new collections</p>
+                    <form class="newsletter-form-inline" id="newsletterForm">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-section">
+                    <h4>About ZESTAAN</h4>
+                    <p>Premium clothing brand dedicated to delivering luxury fashion with uncompromising quality and style.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="products.html?category=men">Men</a></li>
+                        <li><a href="products.html?category=women">Women</a></li>
+                        <li><a href="products.html?category=kids">Kids</a></li>
+                        <li><a href="products.html?category=accessories">Accessories</a></li>
+                        <li><a href="products.html?tag=new">New Arrivals</a></li>
+                        <li><a href="products.html?tag=sale">Sale</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="orders.html">Order Tracking</a></li>
+                        <li><a href="shipping.html">Shipping Info</a></li>
+                        <li><a href="returns.html">Returns & Refunds</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog & Lookbook</a></li>
+                        <li><a href="membership.html">Membership Program</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 ZESTAAN. All rights reserved. Premium Fashion for the Modern World.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/cart.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

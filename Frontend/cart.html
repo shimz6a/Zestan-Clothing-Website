@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - ZESTAAN</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">ZESTAAN</a>
+            <nav class="nav-main">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="products.html?category=men" class="nav-link">Men</a></li>
+                    <li class="nav-item"><a href="products.html?category=women" class="nav-link">Women</a></li>
+                    <li class="nav-item"><a href="products.html?category=kids" class="nav-link">Kids</a></li>
+                    <li class="nav-item"><a href="products.html?category=accessories" class="nav-link">Accessories</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="wishlist.html" class="header-icon">
+                    <i class="far fa-heart"></i>
+                    <span class="badge" id="wishlistCount">0</span>
+                </a>
+                <a href="cart.html" class="header-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="badge" id="cartCount">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Shopping Cart</h1>
+            </div>
+        </section>
+
+        <section class="cart-section section">
+            <div class="container">
+                <div id="cartEmpty" class="cart-empty" style="display: none;">
+                    <i class="fas fa-shopping-bag"></i>
+                    <h2>Your cart is empty</h2>
+                    <p>Start shopping to add items to your cart</p>
+                    <a href="products.html" class="btn btn-primary btn-lg">Continue Shopping</a>
+                </div>
+
+                <div class="cart-layout" id="cartLayout">
+                    <div class="cart-items-container">
+                        <div id="cartItems"></div>
+                    </div>
+
+                    <div class="cart-summary" id="cartSummary">
+                        <h3>Order Summary</h3>
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="cartSubtotal">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span id="cartShipping">$10.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax</span>
+                            <span id="cartTax">$0.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span id="cartTotal">$0.00</span>
+                        </div>
+                        <div class="coupon-section">
+                            <input type="text" id="couponCode" placeholder="Enter coupon code">
+                            <button class="btn btn-outline btn-sm" onclick="applyCoupon()">Apply</button>
+                        </div>
+                        <a href="checkout.html" class="btn btn-primary btn-lg btn-full">Proceed to Checkout</a>
+                        <a href="products.html" class="btn btn-ghost btn-full mt-2">Continue Shopping</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 ZESTAAN. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function applyCoupon() {
+            const code = document.getElementById('couponCode').value;
+            if (code) {
+                Cart.applyCoupon(code);
+            }
+        }
+    </script>
+</body>
+</html>
