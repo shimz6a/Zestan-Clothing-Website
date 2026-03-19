@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist - ZESTAAN</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .wishlist-section { min-height: 60vh; }
+        .wishlist-empty {
+            text-align: center;
+            padding: var(--spacing-3xl) var(--spacing-md);
+        }
+        .wishlist-empty i {
+            font-size: 5rem;
+            color: var(--text-gray);
+            margin-bottom: var(--spacing-lg);
+        }
+        .wishlist-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-xl);
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">ZESTAAN</a>
+            <nav class="nav-main">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="products.html?category=men" class="nav-link">Men</a></li>
+                    <li class="nav-item"><a href="products.html?category=women" class="nav-link">Women</a></li>
+                    <li class="nav-item"><a href="products.html?category=kids" class="nav-link">Kids</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="wishlist.html" class="header-icon">
+                    <i class="fas fa-heart"></i>
+                    <span class="badge" id="wishlistCount">0</span>
+                </a>
+                <a href="cart.html" class="header-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="badge" id="cartCount">0</span>
+                </a>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <span class="logo">ZESTAAN</span>
+            <button class="mobile-nav-close" id="mobileNavClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item"><a href="products.html?category=men">Men</a></li>
+            <li class="mobile-nav-item"><a href="products.html?category=women">Women</a></li>
+            <li class="mobile-nav-item"><a href="products.html?category=kids">Kids</a></li>
+        </ul>
+    </nav>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>My Wishlist</h1>
+                <p>Save your favorite items for later</p>
+            </div>
+        </section>
+
+        <section class="wishlist-section section">
+            <div class="container">
+                <div id="wishlistEmpty" class="wishlist-empty" style="display: none;">
+                    <i class="far fa-heart"></i>
+                    <h2>Your wishlist is empty</h2>
+                    <p>Start adding items you love to your wishlist</p>
+                    <a href="products.html" class="btn btn-primary btn-lg">Start Shopping</a>
+                </div>
+
+                <div id="wishlistContent" style="display: none;">
+                    <div class="wishlist-actions">
+                        <p><span id="wishlistItemCount">0</span> items in your wishlist</p>
+                        <button class="btn btn-outline" onclick="Wishlist.moveAllToCart()">
+                            <i class="fas fa-shopping-cart"></i> Add All to Cart
+                        </button>
+                    </div>
+                    
+                    <div id="wishlistItems"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-section">
+                    <h4>About ZESTAAN</h4>
+                    <p>Premium clothing brand dedicated to delivering luxury fashion with uncompromising quality and style.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="products.html?category=men">Men</a></li>
+                        <li><a href="products.html?category=women">Women</a></li>
+                        <li><a href="products.html?category=kids">Kids</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ZESTAAN. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Update wishlist display
+        function updateWishlistDisplay() {
+            const wishlistEmpty = document.getElementById('wishlistEmpty');
+            const wishlistContent = document.getElementById('wishlistContent');
+            const wishlist = Storage.get('wishlist') || [];
+            
+            if (wishlist.length === 0) {
+                wishlistEmpty.style.display = 'block';
+                wishlistContent.style.display = 'none';
+            } else {
+                wishlistEmpty.style.display = 'none';
+                wishlistContent.style.display = 'block';
+                document.getElementById('wishlistItemCount').textContent = wishlist.length;
+            }
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            updateWishlistDisplay();
+            
+            // Override wishlist renderWishlistPage to update display
+            const originalRender = Wishlist.renderWishlistPage;
+            Wishlist.renderWishlistPage = function() {
+                originalRender.call(this);
+                updateWishlistDisplay();
+            };
+        });
+    </script>
+</body>
+</html>
