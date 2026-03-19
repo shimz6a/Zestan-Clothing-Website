@@ -47,8 +47,7 @@ Payment gateway integration
 Order management
 Product reviews and ratings
 
-Author
-
+Authors:
 Sheemaz Rehan
 ,Mudassir Ali  ,Abdul Rehman Khan 
 
